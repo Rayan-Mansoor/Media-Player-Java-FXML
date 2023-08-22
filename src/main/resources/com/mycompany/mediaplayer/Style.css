@@ -1,0 +1,92 @@
+.root{
+    -fx-background-color: #2F4F4F;
+}
+
+
+.PlayPause{
+                -fx-background-image: url("pause.png");
+                -fx-background-size: contain;
+                -fx-background-repeat:no-repeat;
+                -fx-background-color: transparent;
+}
+
+.PlayPausePic{
+                -fx-background-image: url("play.png");
+                -fx-background-size: contain;
+                -fx-background-repeat:no-repeat;
+                -fx-background-color: transparent;
+}
+
+.Settings{
+                -fx-background-image: url("gear.png");
+                -fx-background-size: contain;
+                -fx-background-repeat:no-repeat;
+                -fx-background-color: transparent;
+}
+.Settings > .arrow-button {
+    -fx-padding: 0;
+}
+
+.Settings > .arrow-button > .arrow {
+    -fx-padding: 0;
+}
+
+.VolumeOff{
+    -fx-background-image: url("volume-down.png");
+    -fx-background-size: contain;
+    -fx-background-repeat:no-repeat;
+    -fx-background-color: transparent;
+}
+
+.VolumeON{
+    -fx-background-image: url("volume.png");
+    -fx-background-size: contain;
+    -fx-background-repeat:no-repeat;
+    -fx-background-color: transparent;
+}
+
+.Volume .thumb{
+    -fx-pref-height: 20px;
+    -fx-pref-width: 20px;
+    -fx-background-image: url("gem.png");
+    -fx-background-size: contain;
+    -fx-background-repeat:no-repeat;
+    -fx-background-color: transparent;
+}
+
+.Volume .track{
+    -fx-pref-height: 5px;
+    -fx-background-color: linear-gradient(to left, #4169E1, #40E0D0);
+}
+
+.forward{
+    -fx-background-image: url("forward.png");
+    -fx-background-size: contain;
+    -fx-background-repeat:no-repeat;
+    -fx-background-color: transparent;
+}
+
+.backward{
+    -fx-background-image: url("backward.png");
+    -fx-background-size: contain;
+    -fx-background-repeat:no-repeat;
+    -fx-background-color: transparent;
+}
+
+
+
+.ProgressBar .thumb{
+    -fx-pref-height: 30px;
+    -fx-pref-width: 10px;
+    -fx-background-color: linear-gradient(to top, royalblue, aquamarine);
+}
+
+.ProgressBar .track{
+     -fx-background-color: linear-gradient(to left, cyan, magenta);
+}
+
+.MenuBar{
+    -fx-background-color: #a9a9a9;
+}
+
+
