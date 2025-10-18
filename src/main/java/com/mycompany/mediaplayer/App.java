@@ -19,7 +19,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 600, 350);
         stage.setScene(scene);
-        stage.setTitle("Youtube Inspired Media Player By Group 14");
+        stage.setTitle("Youtube Inspired Media Player");
         stage.show();
     }
 

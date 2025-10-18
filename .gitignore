@@ -1,0 +1,52 @@
+# --- Build output ---
+target/
+out/
+build/
+
+# --- Java ---
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+# --- Maven plugin leftovers ---
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+dependency-reduced-pom.xml
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs / Editors ---
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+.apt_generated/
+.factorypath
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/build/
+
+# --- JavaFX/Media cache (if any local caches are created) ---
+*.tmp
+
+# History
+.history/

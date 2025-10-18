@@ -16,24 +16,63 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 
-<AnchorPane fx:id="app" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#ShowNodes" prefHeight="350.0" prefWidth="600.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mediaplayer.PrimaryController">
+<AnchorPane fx:id="app"
+            maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            onMouseMoved="#ShowNodes"
+            prefHeight="350.0" prefWidth="600.0"
+            stylesheets="@Style.css"
+            xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.mediaplayer.PrimaryController">
+
    <children>
-      <VBox alignment="CENTER" layoutX="-6.0" layoutY="23.0" onMouseClicked="#StopGear" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0">
+
+      <!-- Video area -->
+      <VBox alignment="CENTER"
+            onMouseClicked="#StopGear"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="23.0">
          <children>
             <MediaView fx:id="MV" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-      <Slider fx:id="Progress" layoutY="332.0" onMouseClicked="#StopGear" onMouseDragged="#StopGear" prefHeight="19.0" prefWidth="600.0" styleClass="ProgressBar" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <StackPane onMouseClicked="#StopGear" prefHeight="285.0" prefWidth="600.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+      <!-- Progress slider above bottom controls -->
+      <Slider fx:id="Progress"
+              onMouseClicked="#StopGear"
+              onMouseDragged="#StopGear"
+              prefHeight="19.0" prefWidth="600.0"
+              styleClass="ProgressBar"
+              AnchorPane.bottomAnchor="49.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" />
+
+      <!-- Centered icon overlay, now aligned to same region as the video area -->
+      <StackPane onMouseClicked="#StopGear"
+                 AnchorPane.topAnchor="23.0"
+                 AnchorPane.leftAnchor="0.0"
+                 AnchorPane.rightAnchor="0.0"
+                 AnchorPane.bottomAnchor="0.0">
          <children>
-            <ImageView fx:id="MPicon" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+            <ImageView fx:id="MPicon"
+                       fitHeight="200.0" fitWidth="300.0"
+                       pickOnBounds="true" preserveRatio="true"
+                       StackPane.alignment="CENTER">
                <image>
                   <Image url="@mediaPlayerIcon.png" />
                </image>
             </ImageView>
          </children>
       </StackPane>
-      <MenuBar prefHeight="25.0" prefWidth="600.0" styleClass="MenuBar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+      <!-- Top menu bar -->
+      <MenuBar prefHeight="25.0" prefWidth="600.0"
+               styleClass="MenuBar"
+               AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -52,18 +91,42 @@
           </Menu>
         </menus>
       </MenuBar>
-      <StackPane layoutY="277.0" prefHeight="56.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+      <!-- Bottom controls bar -->
+      <StackPane prefHeight="56.0" prefWidth="600.0"
+                 AnchorPane.bottomAnchor="0.0"
+                 AnchorPane.leftAnchor="0.0"
+                 AnchorPane.rightAnchor="0.0">
          <children>
-            <Button fx:id="PlayPause" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#play_pause" prefHeight="41.0" prefWidth="41.0" styleClass="PlayPause" StackPane.alignment="CENTER" />
-            <Button fx:id="PlayPausePic" layoutX="290.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#play_pause" prefHeight="41.0" prefWidth="41.0" styleClass="PlayPausePic" visible="false" />
-            <MenuButton fx:id="settings" mnemonicParsing="false" onMouseClicked="#SettingIcon" popupSide="TOP" prefHeight="34.0" prefWidth="33.0" styleClass="Settings" StackPane.alignment="BOTTOM_RIGHT">
+            <Button fx:id="PlayPause"
+                    maxHeight="-Infinity" maxWidth="-Infinity"
+                    mnemonicParsing="false"
+                    onAction="#play_pause"
+                    prefHeight="41.0" prefWidth="41.0"
+                    styleClass="PlayPause"
+                    StackPane.alignment="CENTER" />
+            <Button fx:id="PlayPausePic"
+                    layoutX="290.0" layoutY="18.0"
+                    maxHeight="-Infinity" maxWidth="-Infinity"
+                    mnemonicParsing="false"
+                    onAction="#play_pause"
+                    prefHeight="41.0" prefWidth="41.0"
+                    styleClass="PlayPausePic"
+                    visible="false" />
+            <MenuButton fx:id="settings"
+                        mnemonicParsing="false"
+                        onMouseClicked="#SettingIcon"
+                        popupSide="TOP"
+                        prefHeight="34.0" prefWidth="33.0"
+                        styleClass="Settings"
+                        StackPane.alignment="BOTTOM_RIGHT">
               <items>
                   <Menu mnemonicParsing="false" text="PlayBack Speed">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#halfX" text="0.5x" />
-                        <MenuItem mnemonicParsing="false" onAction="#threequaterX" text="0.75x" />
-                        <MenuItem mnemonicParsing="false" onAction="#oneX" text="1x" />
-                        <MenuItem mnemonicParsing="false" onAction="#twoX" text="2x" />
+                      <MenuItem mnemonicParsing="false" onAction="#threequaterX" text="0.75x" />
+                      <MenuItem mnemonicParsing="false" onAction="#oneX" text="1x" />
+                      <MenuItem mnemonicParsing="false" onAction="#twoX" text="2x" />
                     </items>
                   </Menu>
               </items>
@@ -71,35 +134,68 @@
                   <Insets bottom="10.0" right="15.0" />
                </StackPane.margin>
             </MenuButton>
-            <Button fx:id="VolumeOn" mnemonicParsing="false" onAction="#Volume" prefHeight="34.0" prefWidth="36.0" styleClass="VolumeON" StackPane.alignment="BOTTOM_LEFT">
+            <Button fx:id="VolumeOn"
+                    mnemonicParsing="false"
+                    onAction="#Volume"
+                    prefHeight="34.0" prefWidth="36.0"
+                    styleClass="VolumeON"
+                    StackPane.alignment="BOTTOM_LEFT">
                <StackPane.margin>
                   <Insets bottom="12.0" left="15.0" />
                </StackPane.margin>
             </Button>
-            <Button fx:id="VolumeOff" layoutX="25.0" layoutY="20.0" mnemonicParsing="false" onAction="#Volume" prefHeight="34.0" prefWidth="36.0" styleClass="VolumeOff" visible="false" StackPane.alignment="BOTTOM_LEFT">
+            <Button fx:id="VolumeOff"
+                    layoutX="25.0" layoutY="20.0"
+                    mnemonicParsing="false"
+                    onAction="#Volume"
+                    prefHeight="34.0" prefWidth="36.0"
+                    styleClass="VolumeOff"
+                    visible="false"
+                    StackPane.alignment="BOTTOM_LEFT">
                <StackPane.margin>
                   <Insets bottom="12.0" left="15.0" />
                </StackPane.margin>
             </Button>
-            <Button fx:id="forward" mnemonicParsing="false" onAction="#Forward10sec" prefHeight="40.0" prefWidth="40.0" styleClass="forward" StackPane.alignment="CENTER_RIGHT">
+            <Button fx:id="forward"
+                    mnemonicParsing="false"
+                    onAction="#Forward10sec"
+                    prefHeight="40.0" prefWidth="40.0"
+                    styleClass="forward"
+                    StackPane.alignment="CENTER_RIGHT">
                <StackPane.margin>
                   <Insets right="220.0" />
                </StackPane.margin>
             </Button>
-            <Button fx:id="backward" mnemonicParsing="false" onAction="#Backward10sec" prefHeight="40.0" prefWidth="40.0" styleClass="backward" StackPane.alignment="CENTER_LEFT">
+            <Button fx:id="backward"
+                    mnemonicParsing="false"
+                    onAction="#Backward10sec"
+                    prefHeight="40.0" prefWidth="40.0"
+                    styleClass="backward"
+                    StackPane.alignment="CENTER_LEFT">
                <StackPane.margin>
                   <Insets left="220.0" />
                </StackPane.margin>
             </Button>
          </children>
       </StackPane>
-      <Slider fx:id="VolumeBar" layoutX="58.0" layoutY="305.0" prefHeight="34.0" prefWidth="131.0" styleClass="Volume" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="58.0" />
-      <HBox fx:id="TimeBox" layoutX="7.0" layoutY="250.0" prefHeight="25.0" prefWidth="80.0" spacing="5.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="7.0">
+
+      <!-- Volume slider & time labels -->
+      <Slider fx:id="VolumeBar"
+              prefHeight="34.0" prefWidth="131.0"
+              styleClass="Volume"
+              AnchorPane.bottomAnchor="11.0"
+              AnchorPane.leftAnchor="58.0" />
+      <HBox fx:id="TimeBox"
+            prefHeight="25.0" prefWidth="80.0"
+            spacing="5.0"
+            AnchorPane.bottomAnchor="75.0"
+            AnchorPane.leftAnchor="7.0">
          <children>
             <Label fx:id="currentTime" text="-" textFill="WHITE" />
             <Label text="/" textFill="WHITE" />
             <Label fx:id="totalTime" text="-" textFill="WHITE" />
          </children>
       </HBox>
+
    </children>
 </AnchorPane>
